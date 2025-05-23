@@ -1,0 +1,125 @@
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/bg_gradient_orange_blue">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="16dp">
+
+        <!-- Header -->
+        <TextView
+            android:id="@+id/tv_companyName"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:background="#001F73"
+            android:gravity="center"
+            android:text="Analysis Software Solutions"
+            android:textColor="#FFFFFF"
+            android:textSize="20sp"
+            android:textStyle="bold" />
+
+        <!-- Form Title -->
+        <TextView
+            android:id="@+id/textView2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/tv_companyName"
+            android:layout_marginTop="30dp"
+            android:gravity="center"
+            android:text="Device Registration Form"
+            android:textColor="#FFFFFF"
+            android:textSize="22sp"
+            android:textStyle="bold" />
+
+        <!-- Card-Like Form -->
+        <LinearLayout
+            android:id="@+id/formContainer"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/textView2"
+            android:layout_marginTop="30dp"
+            android:background="@drawable/form_card_background"
+            android:orientation="vertical"
+            android:padding="20dp"
+            android:elevation="6dp">
+
+            <!-- Hotel Name -->
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="match_parent"
+                android:gravity="right"
+                android:layout_height="wrap_content"
+                android:hint="Hotel Name">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/et_hotelName"    
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:drawableStart="@drawable/hotelbuilding"
+                    android:drawablePadding="10dp"
+                    android:textAlignment="textStart"
+                    android:textSize="16sp" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <!-- Hotel Number -->
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:hint="Hotel's Number">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/et_hotelNumber"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:drawableStart="@drawable/phone"
+                    android:drawablePadding="10dp"
+                    android:inputType="phone"
+                    android:textAlignment="textStart"
+                    android:maxLength="10"
+                    android:textSize="16sp" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <!-- Site Code -->
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:hint="Site Code">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/et_hotelSitecode"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:drawableStart="@drawable/hotelbuilding"
+                    android:drawablePadding="10dp"
+                    android:textAlignment="textStart"
+                    android:textSize="16sp" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <!-- Save Button -->
+            <Button
+                android:id="@+id/btn_save"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_marginTop="24dp"
+                android:background="@drawable/save_button_bg"
+                android:text="Save"
+                android:textAllCaps="false"
+                android:textColor="#FFFFFF"
+                android:textSize="18sp" />
+        </LinearLayout>
+
+        <!-- Bottom Image with Icons -->
+        <ImageView
+            android:id="@+id/bottomImage"
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:layout_below="@+id/formContainer"
+            android:layout_marginTop="20dp"
+            android:scaleType="fitCenter"
+            android:src="@drawable/login1" />
+
+    </RelativeLayout>
+</ScrollView>

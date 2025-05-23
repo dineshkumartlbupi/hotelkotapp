@@ -1,0 +1,160 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/splashbackground"
+    android:orientation="vertical"
+    >
+
+    <TextView
+        android:id="@+id/login_title"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="16sp"
+        android:gravity="center"
+        android:text="@string/header"
+        android:background="#4068ea"
+        android:textColor="#fff"
+        android:textSize="25dp"
+        android:textStyle="bold"
+
+        />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="326dp"
+        android:layout_below="@+id/login_title"
+        android:layout_marginLeft="10sp"
+        android:layout_marginTop="70sp"
+        android:layout_marginRight="10sp"
+        android:background="@drawable/user_background"
+        android:elevation="4sp"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:padding="20sp"
+
+
+        >
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:paddingTop="10dp">
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Error Msg!"
+                android:visibility="gone"
+                android:layout_marginTop="5dp"
+                android:textSize="12dp"
+                android:textStyle="bold"
+                android:padding="10dp"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:textColor="@color/red"
+                android:id="@+id/tv_error"/>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+
+                >
+
+                <EditText
+                    android:id="@+id/et_userid"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:drawableLeft="@drawable/user"
+                    android:drawableTint="#FF4081"
+                    android:hint="User Name"
+                    android:inputType="textEmailAddress"
+                    android:singleLine="true"
+                    android:textSize="25sp" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <EditText
+                    android:id="@+id/et_password"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16sp"
+                    android:drawableLeft="@drawable/lock"
+                    android:drawableTint="#FF4081"
+                    android:hint="Password"
+                    android:inputType="textPassword"
+                    android:singleLine="true"
+                    android:textSize="25sp" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity=""
+                    android:layout_marginTop="12dp"
+                    android:onClick="forgotpassword"
+                    android:paddingTop="5sp"
+                    android:text="Forgot Password?"
+                    android:textColor="#0f47ed"
+                    android:textSize="18sp" />
+
+
+                <Button
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="left"
+                    android:layout_margin="22sp"
+                    android:background="@color/primary"
+                    android:onClick="submitit"
+                    android:text="Sign in"
+                    android:textAllCaps="false"
+                    android:textColor="#fff"
+                    android:textSize="25sp"
+
+                    />
+
+
+            </LinearLayout>
+        </LinearLayout>
+    </RelativeLayout>
+
+    <ImageButton
+        android:id="@+id/user_profile_photo"
+        android:layout_width="100sp"
+        android:layout_height="100sp"
+        android:layout_below="@+id/login_title"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="16sp"
+        android:background="@drawable/user_profile_image_background"
+        android:elevation="4sp"
+        android:src="@drawable/user_image1" />
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:text="@string/footer"
+        android:textSize="16dp"
+        android:gravity="center"
+        android:background="#000000"
+        android:textColor="#fff"
+        android:textStyle="bold"
+
+        />
+    <ProgressBar
+        android:id="@+id/simpleProgressBar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:visibility="invisible"
+        android:layout_centerHorizontal="true"/>
+</RelativeLayout>

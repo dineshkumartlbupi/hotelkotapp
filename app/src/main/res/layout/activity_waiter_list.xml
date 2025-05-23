@@ -1,0 +1,310 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+xmlns:app="http://schemas.android.com/apk/res-auto"
+xmlns:tools="http://schemas.android.com/tools"
+android:layout_width="match_parent"
+android:layout_height="wrap_content"
+    android:layout_gravity="center"
+android:background="#4068ea"
+
+
+>
+
+<!--<TextView-->
+<!--android:id="@+id/login_title"-->
+<!--android:layout_width="fill_parent"-->
+<!--android:layout_height="wrap_content"-->
+<!--android:background="#4068ea"-->
+<!--android:gravity="center_horizontal"-->
+<!--android:text="Analysis Software Solutions"-->
+<!--android:textColor="#fff"-->
+<!--android:textSize="30sp"-->
+<!--android:textStyle="italic"-->
+
+<!--app:layout_constraintBottom_toTopOf="@+id/linearLayout"-->
+<!--app:layout_constraintEnd_toEndOf="parent"-->
+<!--app:layout_constraintStart_toStartOf="parent"-->
+<!--app:layout_constraintTop_toTopOf="parent" />-->
+    <LinearLayout
+        android:id="@+id/waiterllayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginRight="8dp"
+        android:background="#4068ea"
+        android:gravity="center"
+        android:orientation="vertical"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TextView
+            android:id="@+id/login_title"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="20dp"
+
+            android:gravity="center_horizontal|center_vertical"
+            android:text="Waiter List"
+            android:textColor="#fff"
+            android:textSize="35sp"
+            android:textStyle="italic"
+
+            />
+    </LinearLayout>
+
+<!--<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"-->
+<!--android:id="@+id/linearLayout"-->
+<!--android:layout_width="match_parent"-->
+<!--android:layout_height="350dp"-->
+<!--android:background="@drawable/below_shadow"-->
+
+<!--android:layout_marginStart="8dp"-->
+<!--android:layout_marginLeft="8dp"-->
+<!--android:layout_marginTop="90dp"-->
+<!--android:layout_marginBottom="16dp"-->
+<!--android:gravity="center"-->
+<!--android:orientation="vertical"-->
+<!--app:layout_constraintBottom_toBottomOf="parent"-->
+<!--app:layout_constraintEnd_toEndOf="parent"-->
+<!--app:layout_constraintHorizontal_bias="0.0"-->
+<!--app:layout_constraintStart_toStartOf="parent"-->
+<!--app:layout_constraintTop_toTopOf="parent"-->
+<!--app:layout_constraintVertical_bias="1.0">-->
+
+
+    <HorizontalScrollView
+        android:id="@+id/horizontalScrollView"
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:layout_gravity="center"
+        android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginTop="23dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginRight="8dp"
+        android:background="@drawable/below_shadow"
+        android:gravity="center"
+        app:layout_constraintEnd_toEndOf="@+id/waiterllayout"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/waiterllayout">
+
+        <ListView
+            android:id="@+id/lvwaiterList"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="0dp"
+
+            android:background="@drawable/user_background"
+            android:headerDividersEnabled="true">
+
+        </ListView>
+    </HorizontalScrollView>
+<!--</LinearLayout>-->
+
+<!--<TextView-->
+<!--android:id="@+id/textView"-->
+<!--android:layout_width="match_parent"-->
+<!--android:layout_height="wrap_content"-->
+<!--android:layout_alignParentBottom="true"-->
+<!--android:layout_centerHorizontal="true"-->
+<!--android:background="#000000"-->
+<!--android:gravity="left"-->
+<!--android:text="Powered By:Saptrishi Infosystems Pvt. Ltd"-->
+<!--android:textColor="#fff"-->
+<!--android:textSize="20sp"-->
+<!--android:textStyle="bold"-->
+<!--app:layout_constraintBottom_toBottomOf="parent"-->
+<!--app:layout_constraintEnd_toEndOf="parent"-->
+<!--app:layout_constraintStart_toStartOf="parent"-->
+<!--app:layout_constraintTop_toBottomOf="@+id/linearLayout" />-->
+
+</android.support.constraint.ConstraintLayout>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!--<?xml version="1.0" encoding="utf-8"?>-->
+<!--<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"-->
+    <!--xmlns:app="http://schemas.android.com/apk/res-auto"-->
+    <!--xmlns:tools="http://schemas.android.com/tools"-->
+    <!--android:layout_width="match_parent"-->
+    <!--android:layout_height="match_parent"-->
+    <!--android:background="#4068ea"-->
+
+    <!--android:layout_gravity="center"-->
+    <!--&gt;-->
+
+    <!--<LinearLayout-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="91dp"-->
+
+        <!--android:layout_marginStart="0dp"-->
+
+        <!--android:layout_marginLeft="8dp"-->
+        <!--android:layout_marginTop="0dp"-->
+        <!--android:layout_marginEnd="8dp"-->
+        <!--android:layout_marginRight="8dp"-->
+        <!--android:layout_marginBottom="8dp"-->
+        <!--android:background="#4068ea"-->
+        <!--android:gravity="center"-->
+        <!--android:orientation="vertical"-->
+        <!--app:layout_constraintBottom_toTopOf="@+id/linearLayout2"-->
+        <!--app:layout_constraintEnd_toEndOf="parent"-->
+        <!--app:layout_constraintStart_toStartOf="parent"-->
+        <!--app:layout_constraintTop_toTopOf="parent">-->
+
+        <!--<TextView-->
+            <!--android:id="@+id/login_title"-->
+            <!--android:layout_width="356dp"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:layout_marginTop="5dp"-->
+            <!--android:layout_marginBottom="10dp"-->
+
+            <!--android:gravity="center"-->
+            <!--android:text="Waiter List"-->
+            <!--android:textColor="#fff"-->
+            <!--android:textSize="35sp"-->
+            <!--android:textStyle="italic" />-->
+
+        <!--&lt;!&ndash;/>&ndash;&gt;-->
+    <!--</LinearLayout>-->
+
+    <!--<LinearLayout-->
+        <!--android:id="@+id/linearLayout2"-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:orientation="vertical"-->
+        <!--app:layout_constraintBottom_toBottomOf="parent"-->
+        <!--app:layout_constraintEnd_toEndOf="parent"-->
+        <!--app:layout_constraintStart_toStartOf="parent"-->
+        <!--app:layout_constraintTop_toTopOf="parent"-->
+        <!--app:layout_constraintVertical_bias="0.51">-->
+        <!--&lt;!&ndash;<TextView&ndash;&gt;-->
+        <!--&lt;!&ndash;android:id="@+id/login_title"&ndash;&gt;-->
+        <!--&lt;!&ndash;android:layout_width="fill_parent"&ndash;&gt;-->
+        <!--&lt;!&ndash;android:layout_height="wrap_content"&ndash;&gt;-->
+        <!--&lt;!&ndash;android:background="#4068ea"&ndash;&gt;-->
+        <!--&lt;!&ndash;android:gravity="center_horizontal"&ndash;&gt;-->
+        <!--&lt;!&ndash;android:text="Analysis Software Solutions"&ndash;&gt;-->
+        <!--&lt;!&ndash;android:textColor="#fff"&ndash;&gt;-->
+        <!--&lt;!&ndash;android:textSize="30sp"&ndash;&gt;-->
+        <!--&lt;!&ndash;android:textStyle="italic"&ndash;&gt;-->
+
+        <!--&lt;!&ndash;app:layout_constraintBottom_toTopOf="@+id/linearLayout"&ndash;&gt;-->
+        <!--&lt;!&ndash;app:layout_constraintEnd_toEndOf="parent"&ndash;&gt;-->
+        <!--&lt;!&ndash;app:layout_constraintStart_toStartOf="parent"&ndash;&gt;-->
+        <!--&lt;!&ndash;app:layout_constraintTop_toTopOf="parent" />&ndash;&gt;-->
+
+
+        <!--&lt;!&ndash;<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"&ndash;&gt;-->
+        <!--&lt;!&ndash;android:id="@+id/linearLayout"&ndash;&gt;-->
+        <!--&lt;!&ndash;android:layout_width="match_parent"&ndash;&gt;-->
+        <!--&lt;!&ndash;android:layout_height="350dp"&ndash;&gt;-->
+        <!--&lt;!&ndash;android:background="@drawable/below_shadow"&ndash;&gt;-->
+
+        <!--&lt;!&ndash;android:layout_marginStart="8dp"&ndash;&gt;-->
+        <!--&lt;!&ndash;android:layout_marginLeft="8dp"&ndash;&gt;-->
+        <!--&lt;!&ndash;android:layout_marginTop="90dp"&ndash;&gt;-->
+        <!--&lt;!&ndash;android:layout_marginBottom="16dp"&ndash;&gt;-->
+        <!--&lt;!&ndash;android:gravity="center"&ndash;&gt;-->
+        <!--&lt;!&ndash;android:orientation="vertical"&ndash;&gt;-->
+        <!--&lt;!&ndash;app:layout_constraintBottom_toBottomOf="parent"&ndash;&gt;-->
+        <!--&lt;!&ndash;app:layout_constraintEnd_toEndOf="parent"&ndash;&gt;-->
+        <!--&lt;!&ndash;app:layout_constraintHorizontal_bias="0.0"&ndash;&gt;-->
+        <!--&lt;!&ndash;app:layout_constraintStart_toStartOf="parent"&ndash;&gt;-->
+        <!--&lt;!&ndash;app:layout_constraintTop_toTopOf="parent"&ndash;&gt;-->
+        <!--&lt;!&ndash;app:layout_constraintVertical_bias="1.0">&ndash;&gt;-->
+
+
+        <!--<HorizontalScrollView-->
+            <!--android:id="@+id/horizontalScrollView"-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="365dp"-->
+            <!--android:layout_gravity="center"-->
+            <!--android:layout_marginStart="8dp"-->
+            <!--android:layout_marginLeft="8dp"-->
+
+            <!--android:layout_marginEnd="8dp"-->
+            <!--android:layout_marginRight="8dp"-->
+            <!--android:background="@drawable/below_shadow"-->
+            <!--android:gravity="center"-->
+            <!--app:layout_constraintBottom_toBottomOf="parent"-->
+            <!--app:layout_constraintEnd_toEndOf="@+id/horizontalScrollView"-->
+            <!--app:layout_constraintHorizontal_bias="0.0"-->
+            <!--app:layout_constraintStart_toStartOf="parent"-->
+            <!--app:layout_constraintTop_toTopOf="parent"-->
+            <!--app:layout_constraintVertical_bias="1.0"-->
+            <!--tools:ignore="NotSibling">-->
+
+            <!--<ListView-->
+                <!--android:id="@+id/lvwaiterList"-->
+                <!--android:layout_width="wrap_content"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:layout_gravity="center"-->
+                <!--android:layout_marginTop="5dp"-->
+
+                <!--android:background="@drawable/user_background"-->
+                <!--android:headerDividersEnabled="true">-->
+
+            <!--</ListView>-->
+        <!--</HorizontalScrollView>-->
+        <!--&lt;!&ndash;</LinearLayout>&ndash;&gt;-->
+
+        <!--&lt;!&ndash;<TextView&ndash;&gt;-->
+        <!--&lt;!&ndash;android:id="@+id/textView"&ndash;&gt;-->
+        <!--&lt;!&ndash;android:layout_width="match_parent"&ndash;&gt;-->
+        <!--&lt;!&ndash;android:layout_height="wrap_content"&ndash;&gt;-->
+        <!--&lt;!&ndash;android:layout_alignParentBottom="true"&ndash;&gt;-->
+        <!--&lt;!&ndash;android:layout_centerHorizontal="true"&ndash;&gt;-->
+        <!--&lt;!&ndash;android:background="#000000"&ndash;&gt;-->
+        <!--&lt;!&ndash;android:gravity="left"&ndash;&gt;-->
+        <!--&lt;!&ndash;android:text="Powered By:Saptrishi Infosystems Pvt. Ltd"&ndash;&gt;-->
+        <!--&lt;!&ndash;android:textColor="#fff"&ndash;&gt;-->
+        <!--&lt;!&ndash;android:textSize="20sp"&ndash;&gt;-->
+        <!--&lt;!&ndash;android:textStyle="bold"&ndash;&gt;-->
+        <!--&lt;!&ndash;app:layout_constraintBottom_toBottomOf="parent"&ndash;&gt;-->
+        <!--&lt;!&ndash;app:layout_constraintEnd_toEndOf="parent"&ndash;&gt;-->
+        <!--&lt;!&ndash;app:layout_constraintStart_toStartOf="parent"&ndash;&gt;-->
+        <!--&lt;!&ndash;app:layout_constraintTop_toBottomOf="@+id/linearLayout" />&ndash;&gt;-->
+    <!--</LinearLayout>-->
+
+<!--</android.support.constraint.ConstraintLayout>-->
+
+
+
+
+
+
+
+
+

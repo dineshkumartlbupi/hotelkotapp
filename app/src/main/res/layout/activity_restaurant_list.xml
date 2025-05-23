@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#82ff5e"
+    tools:context="com.hitesh_sahu.retailapp.view.activities.RestaurantListActivity">
+
+
+
+
+    <TextView
+        android:id="@+id/login_title"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:background="#82ff6e"
+        android:gravity="center"
+        android:text="@string/header"
+        android:textColor="#00645a"
+        android:textSize="25sp"
+        android:textStyle="bold"
+        android:layout_margin="10dp"
+        app:layout_constraintBottom_toTopOf="@+id/linearLayout"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:layout_marginTop="60dp"
+        android:layout_marginBottom="30dp"
+        android:background="#82ff5e"
+        xmlns:android="http://schemas.android.com/apk/res/android">
+
+
+        <TextView
+            android:id="@+id/res_name1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ellipsize="marquee"
+            android:focusable="false"
+            android:freezesText="true"
+            android:textAlignment="center"
+            android:textStyle="bold"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:marqueeRepeatLimit="marquee_forever"
+            android:scrollHorizontally="true"
+            android:singleLine="true"
+            android:text="Resturant Name"
+            android:textColor="#00645A"
+            android:background="#82ff6e"
+            android:textSize="25sp" />
+
+        <HorizontalScrollView
+            android:layout_width="match_parent"
+            android:layout_marginTop="20dp"
+            android:layout_height="match_parent">
+
+            <ListView
+                android:layout_width="match_parent"
+                android:layout_height="200dp"
+                android:id="@+id/lv"
+                android:backgroundTint="#f2f5df"
+                android:layout_marginLeft="140dp"
+                android:background="@drawable/user_background">
+
+            </ListView>
+        </HorizontalScrollView>
+    </LinearLayout>
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:background="#000000"
+        android:gravity="center"
+        android:layout_marginBottom="0dp"
+        android:text="@string/footer"
+        android:textColor="#fff"
+        android:textSize="16sp"
+
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout" />
+
+</android.support.constraint.ConstraintLayout>

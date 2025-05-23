@@ -1,0 +1,197 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#82ff6e"
+    tools:context="com.saptrishi.hotelkotapp.view.activities.Activity_Pos">
+
+    <android.support.v4.widget.DrawerLayout
+        android:id="@+id/nav_drawer"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fitsSystemWindows="true">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <FrameLayout
+                android:id="@+id/frag_container"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+
+                android:layout_above="@+id/control_overview">
+                <!--<TextView-->
+                <!--android:layout_width="match_parent"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:layout_marginTop="60dp"-->
+                <!--android:text="Category"/>-->
+                <HorizontalScrollView
+                    android:id="@+id/Hor_cate"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentTop="true"
+                    android:layout_marginTop="70dp"
+                    android:scrollbars="horizontal">
+
+                    <LinearLayout
+                        android:id="@+id/cate_liner"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center_vertical"
+
+                        android:orientation="horizontal">
+
+
+                    </LinearLayout>
+
+
+                </HorizontalScrollView>
+
+
+                <!--<TextView-->
+                <!--android:layout_width="match_parent"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:layout_marginTop="120dp"-->
+                <!--android:text="Sub Category"/>-->
+
+                <HorizontalScrollView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/Hor_cate"
+                    android:layout_marginTop="138dp"
+                    android:scrollbars="horizontal">
+
+                    <LinearLayout
+                        android:id="@+id/SabCate_liner"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/cate_liner"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal">
+
+                    </LinearLayout>
+
+                </HorizontalScrollView>
+
+                <!--<TextView-->
+                <!--android:layout_width="match_parent"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:layout_marginTop="200dp"-->
+                <!--android:text="Item List"/>-->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="210dp"
+                    android:orientation="vertical">
+
+                    <Button
+                        android:layout_width="180dp"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/tablebook"
+                        android:layout_gravity="center"
+                         android:textColor="@color/white"
+                         android:backgroundTint="@color/primary"
+                        android:background="@drawable/checkout_button"
+                        android:text="Table Booking Item View"
+                        />
+
+                    <EditText
+                        android:id="@+id/autoCompleteTextView"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:hint="Search Here"
+                        android:textColorHint="#000"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <ScrollView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="00dp">
+
+
+                        <!--            <LinearLayout-->
+                        <!--                android:layout_width="match_parent"-->
+                        <!--                android:layout_height="wrap_content"-->
+                        <!--                android:gravity="center_vertical"-->
+                        <!--                android:orientation="vertical"-->
+                        <!--                android:id="@+id/SabCateItem_liner">-->
+                        <!--                <SearchView-->
+                        <!--                    android:id="@+id/student_queryside_serchview"-->
+                        <!--                    android:layout_width="match_parent"-->
+                        <!--                    android:layout_height="40dp"-->
+                        <!--                    android:layout_marginLeft="20dp"-->
+                        <!--                    android:layout_marginRight="20dp"-->
+                        <!--                    android:iconifiedByDefault="true"-->
+                        <!--                    android:queryHint="search here..."-->
+                        <!--                    app:layout_constraintLeft_toLeftOf="parent"-->
+                        <!--                    app:layout_constraintRight_toRightOf="parent"-->
+                        <!--                    app:layout_constraintTop_toBottomOf="@+id/toolbar" />-->
+
+
+                        <!--            </LinearLayout>-->
+
+                        <!--<ListView-->
+                        <!--android:id="@+id/product_list_recycler_view"-->
+                        <!--android:layout_width="match_parent"-->
+                        <!--android:layout_height="wrap_content"-->
+                        <!--android:clickable="false"-->
+                        <!--android:layout_below="@+id/slide_down"></ListView>-->
+
+                        <android.support.v7.widget.RecyclerView
+                            android:id="@+id/product_list_recycler_view"
+                            android:layout_width="match_parent"
+                            android:layout_height="320dp"
+                            android:layout_below="@+id/slide_down"
+                            android:clickable="false" />
+                        <!--<android.support.v7.widget.RecyclerView-->
+                        <!--android:id="@+id/product_list_recycler_view"-->
+                        <!--android:layout_width="match_parent"-->
+                        <!--android:layout_height="wrap_content"-->
+                        <!--android:layout_marginTop="200dp"-->
+                        <!--android:clickable="false"-->
+
+                        <!--android:layout_below="@+id/slide_down" />-->
+                        <!--<android.support.v4.view.ViewPager-->
+                        <!--android:id="@+id/htab_viewpager"-->
+                        <!--android:layout_width="match_parent"-->
+                        <!--android:layout_height="match_parent"-->
+                        <!--app:layout_behavior="@string/appbar_scrolling_view_behavior" />-->
+
+
+                    </ScrollView>
+                </LinearLayout>
+
+                <Button
+                    android:id="@+id/backbutton"
+                    android:layout_width="wrap_content"
+                    android:layout_height="38dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginRight="52dp"
+                    android:layout_gravity="top|right"
+                    android:text="Back " />
+
+
+            </FrameLayout>
+
+            <include layout="@layout/view_bottom_anchor" />
+
+        </RelativeLayout>
+
+        <android.support.design.widget.NavigationView
+            android:id="@+id/nav_view"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_gravity="start"
+            android:fitsSystemWindows="true"
+            app:headerLayout="@layout/drawer_header"
+            app:menu="@menu/drawer" />
+
+
+    </android.support.v4.widget.DrawerLayout>
+
+</android.support.constraint.ConstraintLayout>

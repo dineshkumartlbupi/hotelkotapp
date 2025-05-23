@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TableLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.hitesh_sahu.retailapp.view.activities.DisplayTableActivity">
+
+    <TableRow  android:padding="5dp">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Occupied"
+            android:background="@color/blue"
+            android:textColor="@color/white"
+            android:textStyle="bold"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:textStyle="bold"
+            android:text="Not Occupied"
+            android:background="@color/color_gray_light"
+            />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:textStyle="bold"
+            android:text="Billed"
+            android:background="@color/blue_grey"
+            android:textColor="@color/white"/>
+        <TextView
+            android:layout_width="wrap_content"
+           android:id="@+id/back"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:textStyle="bold"
+            android:text="Back"
+            android:background="@color/blue_grey"
+            android:textColor="@color/white"/>
+    </TableRow>
+    <TableRow android:background="#DAE8FC" android:padding="5dp">
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:id="@+id/but1"
+            android:text="T1" />
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:id="@+id/but2"
+            android:text="T2" />
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:id="@+id/but3"
+            android:text="T3" />
+    </TableRow>
+    <TableRow android:background="#DAE8FC" android:padding="5dp">
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:id="@+id/but4"
+            android:text="t4" />
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:id="@+id/but5"
+            android:text="T5" />
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:id="@+id/but6"
+            android:text="T6" />
+    </TableRow>
+    <TableRow android:background="#DAE8FC" android:padding="5dp">
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:id="@+id/but7"
+            android:text="T7" />
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:id="@+id/but8"
+            android:background="@color/blue_grey"
+            android:text="T8" />
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:id="@+id/but9"
+            android:text="T9" />
+    </TableRow>
+
+    <TableRow android:background="#DAE8FC" android:padding="5dp">
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:id="@+id/but10"
+            android:text="T10" />
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:id="@+id/but11"
+            android:background="@color/blue"
+            android:text="T11" />
+
+    </TableRow>
+
+
+</TableLayout>

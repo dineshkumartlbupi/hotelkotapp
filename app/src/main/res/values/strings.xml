@@ -1,0 +1,47 @@
+<!--
+  ~ Copyright (c) 2017. http://hiteshsahu.com- All Rights Reserved
+  ~ Unauthorized copying of this file, via any medium is strictly prohibited
+  ~ If you use or distribute this project then you MUST ADD A COPY OF LICENCE
+  ~ along with the project.
+  ~  Written by Hitesh Sahu <hiteshkrsahu@Gmail.com>, 2017.
+  -->
+
+<resources>
+
+    <string name="app_name">Hotel KOT Shop</string>
+    <string name="action_settings">Settings</string>
+    <string name="empty_text">Select song from below to play</string>0
+    <string name="standard">Standard</string>
+    <string name="title_changelog">Change log</string>
+    <string name="changelog_close">Close</string>
+    <string name="action_hide">Hide Panel</string>
+    <string name="action_show">Show Panel</string>
+    <string name="action_anchor_enable">Enable Anchor Point</string>
+    <string name="action_anchor_disable">Disable Anchor Point</string>
+    <string name="idle">Idle</string>
+    <string name="crash_toast_text">Oops Crashe Occurred</string>
+    <string name="offer_banner">"Powered By Saptrishi Infosystems Pvt.Ltd.\ V1.3.0.10"</string>
+    <string name="checkout">Print KOT</string>
+    <string name="similar_product">You may also like</string>
+    <string name="slogan">Analysis Software Solutions</string>
+    <string name="email_developer_">Email Developer:</string>
+    <string name="personal_website_">Personal Website :</string>
+    <string name="site_hitesh">www.Saptrishi.net</string>
+    <string name="contact_number">Contact Number</string>
+    <string name="mob_num">9795758575</string>
+    <string name="lab_locations">Locations</string>
+    <string name="pune">Lucknow</string>
+    <string name="address_value">46/8 Gokhale Vihar Marg</string>
+
+    <string name="footer">Powered By Saptrishi Infosystems Pvt.Ltd.\ V1.3.1.0</string>
+    <string name="header">Analysis Software Solutions</string>
+
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="company_name">Company Name</string>
+    <string name="vendor_name">Vendor Name</string>
+    <string name="log_out">Log out</string>
+    <string name="total_amount">Total Cost</string>
+    <string name="Rs">\u20B9</string>
+</resources>

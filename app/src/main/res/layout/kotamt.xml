@@ -1,0 +1,16 @@
+<LinearLayout android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:android="http://schemas.android.com/apk/res/android" >
+    <TextView
+        android:id="@+id/kotTotalAmount"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Total Cost: "
+        android:textSize="30sp"
+        android:layout_gravity="bottom"
+        android:gravity="center"
+        android:textColor="#000"
+
+        />
+
+</LinearLayout>

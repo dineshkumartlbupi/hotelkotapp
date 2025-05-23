@@ -1,0 +1,336 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  ~ Copyright (c) 2017. http://hiteshsahu.com- All Rights Reserved
+  ~ Unauthorized copying of this file, via any medium is strictly prohibited
+  ~ If you use or distribute this project then you MUST ADD A COPY OF LICENCE
+  ~ along with the project.
+  ~  Written by Hitesh Sahu <hiteshkrsahu@Gmail.com>, 2017.
+  -->
+
+<android.support.v7.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:card_view="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/cardlist_item"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginBottom="2dp"
+    android:layout_marginLeft="2dp"
+    android:layout_marginRight="2dp"
+    android:layout_marginTop="2dp"
+    android:foreground="?android:attr/selectableItemBackground"
+    android:orientation="vertical"
+    card_view:cardBackgroundColor="@android:color/white"
+    card_view:cardCornerRadius="4dp"
+    card_view:cardElevation="@dimen/cardview_default_elevation">
+
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:id="@+id/top_view"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_vertical"
+        android:background="#f2f5df"
+        android:orientation="horizontal"
+        android:padding="5dp">
+
+        <!--<ImageView-->
+        <!--android:id="@+id/product_thumb"-->
+        <!--android:layout_width="80dp"-->
+        <!--android:layout_height="80dp"-->
+        <!--android:layout_gravity="center_vertical"-->
+        <!--android:layout_marginLeft="5dp"-->
+        <!--android:gravity="center_vertical" />-->
+
+        <RelativeLayout
+            android:id="@+id/top_icon_detail"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:layout_gravity="center_vertical"
+            android:layout_marginLeft="5dp"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/name"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="5dp"
+                android:layout_marginTop="5dp"
+                android:ellipsize="marquee"
+                android:focusable="false"
+                android:freezesText="true"
+                android:marqueeRepeatLimit="marquee_forever"
+                android:scrollHorizontally="true"
+                android:singleLine="true"
+                android:text="Item Name"
+                android:textColor="#F44336"
+                android:textStyle="bold"
+                android:textSize="16sp" />
+
+            <TextView
+                android:id="@+id/amount"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/name"
+                android:layout_marginTop="5dp"
+                android:layout_alignParentBottom="true"
+                android:layout_marginBottom="10dp"
+                android:ellipsize="marquee"
+                android:focusable="true"
+                android:focusableInTouchMode="true"
+                android:freezesText="true"
+                android:marqueeRepeatLimit="marquee_forever"
+                android:scrollHorizontally="true"
+                android:singleLine="true"
+                android:textColor="@android:color/background_dark"
+                android:textSize="15sp"
+                android:textStyle="bold"
+                android:text="Amount"
+                android:layout_alignParentRight="true"
+                android:layout_alignParentEnd="true"
+                />
+
+            <TextView
+                android:id="@+id/tv_kotnumber"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignBaseline="@+id/item_short_desc"
+                android:layout_alignBottom="@+id/item_short_desc"
+                android:layout_alignParentRight="true"
+                android:layout_marginLeft="5dp"
+                android:ellipsize="marquee"
+                android:focusable="false"
+                android:freezesText="true"
+                android:marqueeRepeatLimit="marquee_forever"
+                android:scrollHorizontally="true"
+                android:singleLine="true"
+                android:text="Available"
+                android:textColor="#ff669900"
+                android:textSize="15sp"
+                android:visibility="gone"
+
+                />
+
+
+
+
+            <TextView
+                android:id="@+id/rate"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Rate"
+                android:layout_alignParentBottom="true"
+                android:layout_marginBottom="10dp"
+                android:ellipsize="marquee"
+                android:focusable="true"
+                android:focusableInTouchMode="true"
+                android:freezesText="true"
+                android:marqueeRepeatLimit="marquee_forever"
+                android:scrollHorizontally="true"
+                android:singleLine="true"
+                android:textColor="@android:color/background_dark"
+                android:textSize="15sp"
+                android:textStyle="bold"
+                android:layout_centerHorizontal="true"
+                />
+
+            <!--<TextView-->
+                <!--android:id="@+id/remove_item"-->
+                <!--android:layout_width="35dp"-->
+                <!--android:layout_height="35dp"-->
+                <!--android:layout_alignParentBottom="true"-->
+                <!--android:layout_gravity="center_vertical|center_horizontal"-->
+                <!--android:layout_marginBottom="10dp"-->
+                <!--android:layout_toLeftOf="@+id/iteam_amount"-->
+                <!--android:background="@drawable/round_text_remove_item"-->
+                <!--android:gravity="center_vertical|center_horizontal"-->
+                <!--android:text="-"-->
+                <!--android:textColor="#FF0000"-->
+                <!--android:textSize="20sp"-->
+                <!--android:textStyle="bold" />-->
+
+            <TextView
+                android:id="@+id/quantity"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:layout_gravity="center_vertical|center_horizontal"
+                android:layout_marginBottom="10dp"
+                android:layout_marginLeft="5dp"
+                android:layout_marginRight="5dp"
+
+                android:ellipsize="marquee"
+                android:focusable="true"
+                android:focusableInTouchMode="true"
+                android:freezesText="true"
+                android:marqueeRepeatLimit="marquee_forever"
+                android:scrollHorizontally="true"
+
+                android:singleLine="true"
+                android:textColor="@android:color/background_dark"
+                android:textSize="15sp"
+                android:textStyle="bold"
+                android:text="Qty"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true" />
+
+            <!--<TextView-->
+                <!--android:id="@+id/add_item"-->
+                <!--android:layout_width="35dp"-->
+                <!--android:layout_height="35dp"-->
+                <!--android:layout_alignParentBottom="true"-->
+                <!--android:layout_alignParentRight="true"-->
+                <!--android:layout_gravity="center_vertical|center_horizontal"-->
+                <!--android:layout_marginBottom="10dp"-->
+                <!--android:background="@drawable/round_text_add_item"-->
+                <!--android:gravity="center_vertical|center_horizontal"-->
+                <!--android:text="+"-->
+                <!--android:textColor="#ff669900"-->
+                <!--android:textSize="20sp"-->
+                <!--android:textStyle="bold"-->
+
+                <!--/>-->
+        </RelativeLayout>
+    </LinearLayout>
+
+</android.support.v7.widget.CardView>
+   <!---->
+
+
+    <!--<?xml version="1.0" encoding="utf-8"?>-->
+
+
+
+    <!--<LinearLayout-->
+    <!--android:layout_height="match_parent"-->
+    <!--android:layout_width="match_parent"-->
+    <!--android:orientation="horizontal"-->
+    <!--android:id="@+id/kot_list"-->
+    <!--xmlns:android="http://schemas.android.com/apk/res/android"-->
+    <!--android:layout_gravity="center_vertical"-->
+    <!--android:background="@color/cardview_light_background"-->
+
+
+
+    <!--&gt;-->
+
+        <!--<TextView-->
+            <!--android:id="@+id/tv_kotnumber"-->
+            <!--android:layout_width="40sp"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:layout_marginLeft="5dp"-->
+            <!--android:layout_marginTop="15dp"-->
+
+            <!--android:ellipsize="marquee"-->
+            <!--android:focusable="false"-->
+            <!--android:freezesText="true"-->
+            <!--android:marqueeRepeatLimit="marquee_forever"-->
+            <!--android:scrollHorizontally="true"-->
+            <!--android:singleLine="true"-->
+            <!--android:text="10000000"-->
+            <!--android:textColor="@android:color/background_dark"-->
+            <!--android:textAlignment="center"-->
+            <!--android:textSize="20sp"-->
+            <!--android:gravity="center"-->
+            <!--android:layout_marginRight="10dp"-->
+            <!--/>-->
+
+        <!--&lt;!&ndash;<TextView&ndash;&gt;-->
+        <!--&lt;!&ndash;android:layout_width="match_parent"&ndash;&gt;-->
+        <!--&lt;!&ndash;android:layout_height="match_parent"&ndash;&gt;-->
+
+        <!--&lt;!&ndash;android:id="@+id/res_name"&ndash;&gt;-->
+        <!--&lt;!&ndash;android:textSize="25dp"&ndash;&gt;-->
+
+        <!--&lt;!&ndash;android:padding="5dp"&ndash;&gt;-->
+        <!--&lt;!&ndash;android:ellipsize="marquee"&ndash;&gt;-->
+        <!--&lt;!&ndash;android:freezesText="true"&ndash;&gt;-->
+        <!--&lt;!&ndash;android:marqueeRepeatLimit="marquee_forever"&ndash;&gt;-->
+        <!--&lt;!&ndash;android:scrollHorizontally="true"&ndash;&gt;-->
+        <!--&lt;!&ndash;android:singleLine="true"&ndash;&gt;-->
+
+        <!--&lt;!&ndash;/>&ndash;&gt;-->
+
+        <!--<TextView-->
+            <!--android:id="@+id/name"-->
+            <!--android:layout_width="450sp"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:layout_marginLeft="5dp"-->
+            <!--android:layout_marginTop="15dp"-->
+
+            <!--android:ellipsize="marquee"-->
+            <!--android:focusable="false"-->
+            <!--android:freezesText="true"-->
+            <!--android:marqueeRepeatLimit="marquee_forever"-->
+            <!--android:scrollHorizontally="true"-->
+            <!--android:singleLine="true"-->
+            <!--android:text="Name"-->
+            <!--android:textColor="@android:color/background_dark"-->
+            <!--android:textAlignment="viewStart"-->
+            <!--android:textSize="20sp"-->
+            <!--android:gravity="start"-->
+            <!--android:layout_marginRight="10dp"-->
+            <!--/>-->
+        <!--<TextView-->
+            <!--android:id="@+id/rate"-->
+            <!--android:layout_width="100sp"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:layout_marginLeft="5dp"-->
+            <!--android:layout_marginTop="15dp"-->
+
+            <!--android:ellipsize="marquee"-->
+            <!--android:focusable="false"-->
+            <!--android:freezesText="true"-->
+            <!--android:marqueeRepeatLimit="marquee_forever"-->
+            <!--android:scrollHorizontally="true"-->
+            <!--android:singleLine="true"-->
+            <!--android:text="Rate"-->
+            <!--android:textColor="@android:color/background_dark"-->
+            <!--android:textAlignment="center"-->
+            <!--android:textSize="20sp"-->
+            <!--android:gravity="center"-->
+            <!--android:layout_marginRight="10dp"-->
+            <!--/>-->
+        <!--<TextView-->
+            <!--android:id="@+id/quantity"-->
+            <!--android:layout_width="40sp"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:layout_marginLeft="5dp"-->
+            <!--android:layout_marginTop="15dp"-->
+
+            <!--android:ellipsize="marquee"-->
+            <!--android:focusable="false"-->
+            <!--android:freezesText="true"-->
+            <!--android:marqueeRepeatLimit="marquee_forever"-->
+            <!--android:scrollHorizontally="true"-->
+            <!--android:singleLine="true"-->
+            <!--android:text="Quantity"-->
+            <!--android:textColor="@android:color/background_dark"-->
+            <!--android:textAlignment="center"-->
+            <!--android:textSize="20sp"-->
+            <!--android:gravity="center"-->
+            <!--android:layout_marginRight="10dp"-->
+            <!--/>-->
+
+
+        <!--<TextView-->
+            <!--android:id="@+id/amount"-->
+            <!--android:layout_width="100sp"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:layout_marginLeft="5dp"-->
+            <!--android:layout_marginTop="15dp"-->
+
+            <!--android:ellipsize="marquee"-->
+            <!--android:focusable="false"-->
+            <!--android:freezesText="true"-->
+            <!--android:marqueeRepeatLimit="marquee_forever"-->
+            <!--android:scrollHorizontally="true"-->
+            <!--android:singleLine="true"-->
+            <!--android:text="Amount"-->
+            <!--android:textColor="@android:color/background_dark"-->
+            <!--android:textAlignment="center"-->
+            <!--android:textSize="20sp"-->
+            <!--android:gravity="center"-->
+            <!--android:layout_marginRight="10dp"-->
+            <!--/>-->
+
+
+<!--</LinearLayout>-->

@@ -1,0 +1,45 @@
+[versions]
+acra = "4.8.5"
+agp = "8.7.3"
+constraintLayoutVersion = "2.0.4"
+glide = "4.12.0"
+gson = "2.10.1"
+junit = "4.13.2"
+junitVersion = "1.2.1"
+espressoCore = "3.6.1"
+appcompat = "1.7.0"
+kenburnsview = "1.0.7"
+library = "2.4.0"
+material = "1.12.0"
+activity = "1.10.1"
+constraintlayout = "2.2.1"
+picasso = "2.5.2"
+supportV4 = "28.0.0"
+volley = "1.2.1"
+
+[libraries]
+acra = { module = "ch.acra:acra", version.ref = "acra" }
+appcompat-v7 = { module = "com.android.support:appcompat-v7", version.ref = "supportV4" }
+cardview-v7 = { module = "com.android.support:cardview-v7", version.ref = "supportV4" }
+constraint-layout = { module = "com.android.support.constraint:constraint-layout", version.ref = "constraintLayoutVersion" }
+design = { module = "com.android.support:design", version.ref = "supportV4" }
+glide = { module = "com.github.bumptech.glide:glide", version.ref = "glide" }
+gson = { module = "com.google.code.gson:gson", version.ref = "gson" }
+junit = { group = "junit", name = "junit", version.ref = "junit" }
+ext-junit = { group = "androidx.test.ext", name = "junit", version.ref = "junitVersion" }
+espresso-core = { group = "androidx.test.espresso", name = "espresso-core", version.ref = "espressoCore" }
+appcompat = { group = "androidx.appcompat", name = "appcompat", version.ref = "appcompat" }
+kenburnsview = { module = "com.flaviofaria:kenburnsview", version.ref = "kenburnsview" }
+library = { module = "com.nineoldandroids:library", version.ref = "library" }
+material = { group = "com.google.android.material", name = "material", version.ref = "material" }
+activity = { group = "androidx.activity", name = "activity", version.ref = "activity" }
+constraintlayout = { group = "androidx.constraintlayout", name = "constraintlayout", version.ref = "constraintlayout" }
+palette-v7 = { module = "com.android.support:palette-v7", version.ref = "supportV4" }
+picasso = { module = "com.squareup.picasso:picasso", version.ref = "picasso" }
+recyclerview-v7 = { module = "com.android.support:recyclerview-v7", version.ref = "supportV4" }
+support-v4 = { module = "com.android.support:support-v4", version.ref = "supportV4" }
+volley = { module = "com.android.volley:volley", version.ref = "volley" }
+
+[plugins]
+android-application = { id = "com.android.application", version.ref = "agp" }
+

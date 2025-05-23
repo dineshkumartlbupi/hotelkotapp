@@ -1,0 +1,67 @@
+<RelativeLayout android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:background="#ffffff"
+    >
+
+
+
+        <LinearLayout
+            android:id="@+id/tableContainer"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/green"
+            android:padding="10dp">
+
+            <ImageView
+                android:id="@+id/pullDown"
+                android:layout_width="35sp"
+                android:layout_height="35sp"
+                android:layout_marginLeft="10sp"
+                android:background="@drawable/slide_down" />
+
+            <TextView
+                android:id="@+id/kotHeading"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_gravity="center_horizontal"
+                android:gravity="center"
+                android:text="Table no 22"
+                android:textColor="#ffffff"
+                android:textSize="30dp" />
+        </LinearLayout>
+
+
+
+                <ListView
+                    android:layout_above="@+id/kotTotalAmount"
+                    android:layout_below="@+id/tableContainer"
+                    android:id="@+id/kotListView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent" />
+
+
+    <TextView
+        android:id="@+id/kotTotalAmount"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentBottom="true"
+        android:layout_gravity="bottom"
+        android:layout_marginStart="0dp"
+        android:layout_marginLeft="0dp"
+        android:layout_marginEnd="0dp"
+        android:layout_marginRight="0dp"
+        android:layout_marginBottom="0dp"
+        android:background="#009688"
+        android:gravity="center"
+        android:text="Total Cost "
+        android:textColor="#ffffff"
+        android:textSize="25sp" />
+
+
+
+</RelativeLayout>
