@@ -4,6 +4,7 @@ import android.app.ProgressDialog;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.os.Build;
 import android.os.Handler;
 import android.os.Bundle;
 import android.util.Log;
@@ -38,7 +39,7 @@ import java.util.Date;
 public class LoginActivity extends AppCompatActivity {
 
         Button button;
-    TextView tv_error;
+//    TextView tv_error;
     String url;
     EditText etName,etPassword;
     boolean checkser=false;
@@ -59,7 +60,7 @@ public class LoginActivity extends AppCompatActivity {
 //            constraintLayout.setBackgroundResource(R.drawable.loginimage);
 
         button = (Button) findViewById( R.id.button );
-        tv_error = (TextView) findViewById( R.id.tv_error );
+//        tv_error = (TextView) findViewById( R.id.tv_error );
         etName = (EditText) findViewById( R.id.et_userid );
         etPassword = (EditText) findViewById( R.id.et_password );
         etName.setText( "" );
@@ -142,30 +143,32 @@ public class LoginActivity extends AppCompatActivity {
                  Log.e("expiryDate",exp+"");
                if(current.before(exp))
                {
-                if (etName.getText().toString().trim().isEmpty()) {
-                    etName.setError("enter user name");
-                    etName.requestFocus();
-                }
-                else {
-                    if (etPassword.getText().toString().trim().isEmpty()) {
-                        etPassword.setError("enter password");
-                        etPassword.requestFocus();
-                    } else {
+                   if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.GINGERBREAD) {
+                       if (etName.getText().toString().trim().isEmpty()) {
+                           etName.setError("enter user name");
+                           etName.requestFocus();
+                       }
+                       else {
+                           if (etPassword.getText().toString().trim().isEmpty()) {
+                               etPassword.setError("enter password");
+                               etPassword.requestFocus();
+                           } else {
 
-                        final String userid = etName.getText().toString().trim();
-                        final String password = etPassword.getText().toString().trim();
+                               final String userid = etName.getText().toString().trim();
+                               final String password = etPassword.getText().toString().trim();
 
-//                        SharedPreferences s=getSharedPreferences("Restaurant",Context.MODE_PRIVATE);
-//                        SharedPreferences.Editor ed=s.edit();
+       //                        SharedPreferences s=getSharedPreferences("Restaurant",Context.MODE_PRIVATE);
+       //                        SharedPreferences.Editor ed=s.edit();
 
 
-                       getLoginInfo(userid, password);
+                              getLoginInfo(userid, password);
 
-                        Log.e("chk1",chk+"");
+                               Log.e("chk1",chk+"");
 
-                    }
-                }
-            }
+                           }
+                       }
+                   }
+               }
             else
             {
                 Toast.makeText(this, "Your License Expired..........", Toast.LENGTH_SHORT).show();
@@ -243,7 +246,9 @@ public class LoginActivity extends AppCompatActivity {
                             ed.putString("loginId",uname);
                             ed.putString("UshortName",ushname);
 //                            ed.putString("tableName","");
-                            ed.apply();
+                            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.GINGERBREAD) {
+                                ed.apply();
+                            }
                             progressDialog.dismiss();
                             Intent intent = new Intent(LoginActivity.this, RestaurantListActivity.class);
 
@@ -258,8 +263,8 @@ public class LoginActivity extends AppCompatActivity {
                         }
                         else{
                             progressDialog.dismiss();
-                            tv_error.setVisibility(View.VISIBLE);
-                            tv_error.setText("Please check your credentials!");
+//                            tv_error.setVisibility(View.VISIBLE);
+//                            tv_error.setText("Please check your credentials!");
                             etName.requestFocus();
                         }
 
@@ -270,8 +275,8 @@ public class LoginActivity extends AppCompatActivity {
                 } catch (JSONException e) {
                     e.printStackTrace();
                     progressDialog.dismiss();
-                    tv_error.setVisibility(View.VISIBLE);
-                    tv_error.setText(""+e.getMessage());
+//                    tv_error.setVisibility(View.VISIBLE);
+//                    tv_error.setText(""+e.getMessage());
                     Log.e("ErrorInLogin:",""+e.getMessage());
                     // Toast.makeText(StuAssemblyAttandance.this, "response: " + e.getMessage(), Toast.LENGTH_LONG).show();
                 }
@@ -281,8 +286,8 @@ public class LoginActivity extends AppCompatActivity {
             @Override
             public void onErrorResponse(VolleyError error) {
                 progressDialog.dismiss();
-                tv_error.setVisibility(View.VISIBLE);
-                tv_error.setText("ErrorLoginInfo : "+error.getMessage());
+//                tv_error.setVisibility(View.VISIBLE);
+//                tv_error.setText("ErrorLoginInfo : "+error.getMessage());
                 VolleyLog.d("", "ErrorLoginInfo: " + error.getMessage());
                 //Log.d("Volley Error service", error.getMessage());
                 //  Toast.makeText(getApplicationContext(), error.getMessage(), Toast.LENGTH_SHORT).show();
@@ -306,7 +311,6 @@ public class LoginActivity extends AppCompatActivity {
         Toast.makeText(this, "Please click BACK again to exit", Toast.LENGTH_SHORT).show();
 
         new Handler().postDelayed(new Runnable() {
-
             @Override
             public void run() {
                 doubleBackToExitPressedOnce=false;

@@ -81,7 +81,7 @@
 
     </LinearLayout>
 
-    <android.support.v7.widget.RecyclerView
+    <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/productlist"
         android:layout_width="match_parent"
         android:layout_height="850dp"
@@ -91,7 +91,7 @@
         android:background="#82ff6e"
         android:clickable="false" />
 
-    <android.support.v7.widget.CardView
+    <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
         android:layout_height="100dp"
         android:layout_marginBottom="2dp"
@@ -133,6 +133,6 @@
         />
 
         </LinearLayout>
-    </android.support.v7.widget.CardView>
+    </androidx.cardview.widget.CardView>
 
 </RelativeLayout>

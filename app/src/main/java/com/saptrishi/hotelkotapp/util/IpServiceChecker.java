@@ -6,9 +6,6 @@ public class IpServiceChecker {
     private static String ipaddress;
 
     private static String appName;
-
-
-
     public IpServiceChecker(String ipaddress, String appName) {
         this.ipaddress = ipaddress;
         this.appName = appName;

@@ -140,21 +140,10 @@ public class Device_Registration extends AppCompatActivity {
                             final String sitecode = et_hotelSitecode.getText().toString().trim();
                             TelephonyManager tm = (TelephonyManager) getSystemService( Context.TELEPHONY_SERVICE );
                             try {
-                                if (ActivityCompat.checkSelfPermission( Device_Registration.this, Manifest.permission.READ_PHONE_STATE ) != PackageManager.PERMISSION_GRANTED) {
-                                    // TODO: Consider calling
-                                    //    ActivityCompat#requestPermissions
-                                    // here to request the missing permissions, and then overriding
-                                    //   public void onRequestPermissionsResult(int requestCode, String[] permissions,
-                                    //                                          int[] grantResults)
-                                    // to handle the case where the user grants the permission. See the documentation
-                                    // for ActivityCompat#requestPermissions for more details.
-                                    Toast.makeText( Device_Registration.this, "Kindly give Phone permission", Toast.LENGTH_SHORT ).show();
 
-                                    return;
-                                } else {
-                                    final String dev_IEMI = tm.getDeviceId();
+//                                    final String dev_IEMI = tm.getDeviceId();
                                    //    tm.getDeviceId();//tm.getDeviceId()
-                                   // final String dev_IEMI = "36099155321055665475";
+                                    final String dev_IEMI = "36099155321055665475";
 
                                     // Define the code block to be executed
 
@@ -177,9 +166,6 @@ public class Device_Registration extends AppCompatActivity {
                                     };
                                     // Start the initial runnable task by posting through the handler
                                     handler.post( runnableCode );
-
-                                }
-
 
                             } catch (Exception ex) {
                                 Toast.makeText( Device_Registration.this, "Kindly give Phone permission", Toast.LENGTH_SHORT ).show();
@@ -228,7 +214,7 @@ public class Device_Registration extends AppCompatActivity {
 //192.168.30.51
         //IpServiceChecker ip=new IpServiceChecker(this);//http://192.168.0.28/Hotel_ServiceApp/Kanpur_HotelKotApp_Service.svc/checkservice
 
-        String URL ="http://192.168.1.135/Hotel_ServiceApp/Kanpur_HotelKotApp_Service.svc/Hotel_DeviceReg_Post/HotelName/" + Hname + "/HotelMobile/" + Hnumber + "/SiteCode/" + sitecode + "/Device_IEMINo/" + dev_IEMI;
+        String URL ="http://192.168.0.142/Hotel_ServiceApp/Kanpur_HotelKotApp_Service.svc/Hotel_DeviceReg_Post/HotelName/" + Hname + "/HotelMobile/" + Hnumber + "/SiteCode/" + sitecode + "/Device_IEMINo/" + dev_IEMI;
 
 
       // String URL ="http://192.168.1.54/Chanakya/Kanpur_HotelKotApp_Service.svc/Hotel_DeviceReg_Post/HotelName/" + Hname + "/HotelMobile/" + Hnumber + "/SiteCode/" + sitecode + "/Device_IEMINo/" + dev_IEMI;
@@ -399,6 +385,14 @@ public class Device_Registration extends AppCompatActivity {
 
         // Show Whats New Features If Requires
         //new WhatsNewDialog(this);
+    }
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        if (handler != null) {
+            handler.removeCallbacksAndMessages(null);
+        }
     }
 
 }

@@ -29,7 +29,7 @@ public class ServiceAndDBChecker {
     {
         RequestQueue rq = Volley.newRequestQueue(context);
         //http://192.168.123.2/RAJRASOI/Kanpur_HotelKotApp_Service.svc/checkservice
-        String url = "http://192.168.1.135/Hotel_ServiceApp/Kanpur_HotelKotApp_Service.svc/checkservice";//"http://192.168.9.41/Hotel_ServiceApp/Kanpur_HotelKotApp_Service.svc/checkservice";
+        String url = "http://192.168.0.142/Hotel_ServiceApp/Kanpur_HotelKotApp_Service.svc/checkservice";//"http://192.168.9.41/Hotel_ServiceApp/Kanpur_HotelKotApp_Service.svc/checkservice";
         //String url ="http://192.168.123.2/RAJRASOI/Kanpur_HotelKotApp_Service.svc/checkservice";//"http://192.168.0.117/Hotel_ServiceApp/Kanpur_HotelKotApp_Service.svc/CheckService";
 //http://192.168.0.13/  //http://192.168.123.6//http://192.168.0.171/Nirmal/Kanpur_HotelKotApp_Service.svc/checkservice
 //http://192.168.0.7/Hotel_SeviceApp/Kanpur_HotelKotApp_Service.svc/checkservice
