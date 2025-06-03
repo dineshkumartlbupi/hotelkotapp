@@ -97,19 +97,6 @@ public class Device_Registration extends AppCompatActivity {
         DateOfRegistration = mdformat.format( calendar.getTime() );
 
 
-//           new Thread(new Runnable() {
-//               @Override
-//               public void run() {
-//
-//               }
-//           });
-
-//        handler.postDelayed(new Runnable() {
-//            @Override
-//            public void run() {
-//
-//            }
-//        },3000);
 
         btn = (Button) findViewById( R.id.btn_save );
 
@@ -117,7 +104,7 @@ public class Device_Registration extends AppCompatActivity {
         btn.setOnClickListener( new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-//                btn.setClickable(true);
+                btn.setClickable(true);
                 if (et_hotelSitecode.getText().toString().trim().isEmpty()) {
                     et_hotelSitecode.setError( "please enter site code" );
                     et_hotelSitecode.requestFocus();
@@ -125,24 +112,17 @@ public class Device_Registration extends AppCompatActivity {
                     if (et_hotelName.getText().toString().trim().isEmpty()) {
                         et_hotelName.setError( "please enter hotel name" );
                         et_hotelName.requestFocus();
-//            Toast.makeText(this, "Kindly fill are Requirements", Toast.LENGTH_SHORT).show();
                     } else {
                         if (et_hotelNumber.getText().toString().trim().isEmpty()) {
                             et_hotelNumber.setError( "please enter hotel's number" );
                             et_hotelNumber.requestFocus();
-//                Toast.makeText(this, "Kindly fill are Requirements", Toast.LENGTH_SHORT).show();
                         } else {
-                            //String companyName = tv_CompanyName.getText().toString().trim();
-//                String vendorName = tv_VendorName.getText().toString().trim();
                             final String hotelName = et_hotelName.getText().toString().trim().replaceAll( "\\s", "_" );
                             final String hotelNumber = et_hotelNumber.getText().toString().trim();
-                            //final String dev_IEMI = "000000";
                             final String sitecode = et_hotelSitecode.getText().toString().trim();
                             TelephonyManager tm = (TelephonyManager) getSystemService( Context.TELEPHONY_SERVICE );
                             try {
 
-//                                    final String dev_IEMI = tm.getDeviceId();
-                                   //    tm.getDeviceId();//tm.getDeviceId()
                                     final String dev_IEMI = "36099155321055665475";
 
                                     // Define the code block to be executed
@@ -150,8 +130,6 @@ public class Device_Registration extends AppCompatActivity {
                                     runnableCode = new Runnable() {
                                         @Override
                                         public void run() {
-                                            // isRunning = true;
-                                            //while (isRunning) {
                                             try {
                                                 sendDeviceInfo( hotelName, hotelNumber, sitecode, dev_IEMI ); // Volley Request
 
@@ -162,7 +140,6 @@ public class Device_Registration extends AppCompatActivity {
                                                 // isRunning = false;
                                             }
                                         }
-                                        // }
                                     };
                                     // Start the initial runnable task by posting through the handler
                                     handler.post( runnableCode );
@@ -202,52 +179,36 @@ public class Device_Registration extends AppCompatActivity {
         }, 2000 );
     }
 
+
     public boolean sendDeviceInfo(final String Hname, final String Hnumber, final String sitecode, final String dev_IEMI) {
 
+        SharedPreferences prefs = getSharedPreferences("Config", MODE_PRIVATE);
+        String ip = prefs.getString("ip", "");
+        String port = prefs.getString("port", "");
+        String projectPath = prefs.getString("projectPath", "");
+        String servicePath = prefs.getString("servicePath", "");
+        if (ip.isEmpty() || projectPath.isEmpty() || servicePath.isEmpty()) {
+            Toast.makeText(this, "Please configure all settings first", Toast.LENGTH_SHORT).show();
+            return false;
+        }
+        // Construct base URL
+        String DYNAMIC_URL = "http://"+ip+"/"+port+"/"+projectPath + "/" + servicePath+"/"+"HotelName/"+ Hname + "/HotelMobile/" + Hnumber + "/SiteCode/" + sitecode + "/Device_IEMINo/" + dev_IEMI;
+        Log.e( "DYNAMIC_URL : ", ""+ DYNAMIC_URL );
+        String STATIC_URL ="http://192.168.0.142/Hotel_ServiceApp/Kanpur_HotelKotApp_Service.svc/Hotel_DeviceReg_Post/HotelName/" + Hname + "/HotelMobile/" + Hnumber + "/SiteCode/" + sitecode + "/Device_IEMINo/" + dev_IEMI;
+        Log.e( "STATIC_URL : ", ""+ STATIC_URL );
         RequestQueue requestQueue = Volley.newRequestQueue( this );
-        //final int[] expiryDays = new int[1];
-        //int expiryDays =0;
-//        http://KotHotelAPI.Outomate.com/Kanpur_HotelKotApp_Service.svc
-        //http://192.168.0.123/Hotel_ServiceApp/Kanpur_HotelKotApp_Service.svc/checkservice
-//192.168.30.51
-
-//192.168.30.51
-        //IpServiceChecker ip=new IpServiceChecker(this);//http://192.168.0.28/Hotel_ServiceApp/Kanpur_HotelKotApp_Service.svc/checkservice
-
-        String URL ="http://192.168.0.142/Hotel_ServiceApp/Kanpur_HotelKotApp_Service.svc/Hotel_DeviceReg_Post/HotelName/" + Hname + "/HotelMobile/" + Hnumber + "/SiteCode/" + sitecode + "/Device_IEMINo/" + dev_IEMI;
-
-
-      // String URL ="http://192.168.1.54/Chanakya/Kanpur_HotelKotApp_Service.svc/Hotel_DeviceReg_Post/HotelName/" + Hname + "/HotelMobile/" + Hnumber + "/SiteCode/" + sitecode + "/Device_IEMINo/" + dev_IEMI;
-
-
-    //http://192.168.29.23/Hotel_SeviceApp/Kanpur_HotelKotApp_Service.svc/Hotel_DeviceReg_Post/HotelName/
-     //   String URL ="http://192.168.123.2//RajRasoi/Kanpur_HotelKotApp_Service.svc/checkservice"
-        // http://192.168.0.117/Hotel_ServiceApp/Kanpur_HotelKotApp_Service.svc/checkservice
-//http://192.168.0.68/hotel_seviceapp/Kanpur_HotelKotApp_Servi.cesvc/checkservice
-//192.168.0.13 // http://192.168.123.6//"http://192.168.43.18
-//http://192.168.29.23/Hotel_SeviceApp/Kanpur_HotelKotApp_Service.svc/
-        // "http://192.168.0.122/Hotel_SeviceApp/Kanpur_HotelKotApp_Service.svc/Hotel_DeviceReg_Post/HotelName/" + Hname + "/HotelMobile/" + Hnumber + "/SiteCode/" + sitecode + "/Device_IEMINo/" + dev_IEMI;
-        //"http://192.168.1.73/Hotel_ServiceApp/Kanpur_HotelKotApp_Service.svc/Hotel_DeviceReg_Post/HotelName/"
-        //http://192.168.9.41/Hotel_ServiceApp/Kanpur_HotelKotApp_Service.svc/Hotel_DeviceReg_Post/HotelName/
-        Log.e( "url1", "" + URL );
-        JsonArrayRequest jsonArrayRequest = new JsonArrayRequest( URL, new Response.Listener<JSONArray>() {
+        JsonArrayRequest jsonArrayRequest = new JsonArrayRequest( DYNAMIC_URL, new Response.Listener<JSONArray>() {
             @Override
             public void onResponse(JSONArray response)
             {
                 try {
-
 
                     for (int i = 0; i < response.length(); i++) {
                         JSONObject jsonObject = (JSONObject) response.get( i );
                         String str_reb = "";
                         str_reb = jsonObject.optString( "errormessage" );
                         String noofDays = jsonObject.optString( "NoOfDays" );
-//                        if(noofDays.equals("null"))
-//                        {
-//                            expiryDays[0]=0;
-//                            noofDays="0";
-//                        }
-//                        else
+//
                         int expiryDays = Integer.parseInt( noofDays );
                         Log.e( "response", "" + response + "" );
 
@@ -272,8 +233,6 @@ public class Device_Registration extends AppCompatActivity {
 
 
                         Log.e( "expiry", expiryDate );
-
-
                         if (str_reb.equals( "" )) {
                             Toast.makeText( Device_Registration.this, "Kindly wait", Toast.LENGTH_SHORT ).show();
                         } else {
@@ -288,15 +247,10 @@ public class Device_Registration extends AppCompatActivity {
                                 ed.putString( "ExpiryDate", expiryDate );
                                 ed.apply();
                                 handler.removeCallbacks( runnableCode );
-//                                MySqliteDatabase db = new MySqliteDatabase(Device_Registration.this);
-//                                db.insertDeviceRegistrationInfoTable(sitecode, Hname, dev_IEMI, Hnumber, expiryDate);
-
                                 Log.e( "newExpiryDAte", expiryDate );
                                 Intent intent = new Intent( Device_Registration.this, ServiceSettingActivity.class );
                                 startActivity( intent );
                                 finish();
-
-
                             } else {
 //                                if (str_reb.equals("Device Already exits") && expiryDays >0)
 //                                {
@@ -346,10 +300,7 @@ public class Device_Registration extends AppCompatActivity {
             public void onErrorResponse(VolleyError error) {
                 btn.setClickable( true );
                 VolleyLog.d( "", "ErrorLoginInfo: " + error.getMessage() );
-                //Log.d("Volley Error service", error.getMessage());
-//                if(TextUtils.isEmpty(error.getMessage()))
-//                  Toast.makeText(getApplicationContext(), "Kindly press submit button again", Toast.LENGTH_SHORT).show();
-                Toast.makeText( Device_Registration.this, ""+ error, Toast.LENGTH_SHORT ).show();
+                Toast.makeText( Device_Registration.this, "Server Error" , Toast.LENGTH_SHORT ).show();
             }
         } );
         requestQueue.add( jsonArrayRequest );
@@ -362,7 +313,6 @@ public class Device_Registration extends AppCompatActivity {
     protected void onResume() {
         super.onResume();
 
-        // Show Offline Error Message
         if (!Connectivity.isConnected( getApplicationContext() )) {
             final Dialog dialog = new Dialog( Device_Registration.this );
             dialog.requestWindowFeature( Window.FEATURE_NO_TITLE );

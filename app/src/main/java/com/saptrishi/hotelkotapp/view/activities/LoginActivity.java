@@ -25,6 +25,7 @@ import com.android.volley.toolbox.JsonArrayRequest;
 import com.android.volley.toolbox.Volley;
 import com.saptrishi.hotelkotapp.*;
 import com.saptrishi.hotelkotapp.util.IpServiceChecker;
+import com.saptrishi.hotelkotapp.view.IP_Registration;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -172,7 +173,7 @@ public class LoginActivity extends AppCompatActivity {
             else
             {
                 Toast.makeText(this, "Your License Expired..........", Toast.LENGTH_SHORT).show();
-                Intent i=new Intent(this,Device_Registration.class);
+                Intent i=new Intent(this, IP_Registration.class);
                 startActivity(i);
                 finish();
             }

@@ -27,6 +27,7 @@ import android.widget.Toast;
 
 import com.saptrishi.hotelkotapp.R;
 import com.saptrishi.hotelkotapp.model.MySqliteDatabase;
+import com.saptrishi.hotelkotapp.view.IP_Registration;
 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
@@ -168,7 +169,7 @@ public class SplashActivity extends FragmentActivity {
                 }
                 else
                 {
-                    Intent intent = new Intent(getApplicationContext(),Device_Registration.class);
+                    Intent intent = new Intent(getApplicationContext(), IP_Registration.class);
                     startActivity(intent);
                     finish();
 

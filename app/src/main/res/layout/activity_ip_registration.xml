@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="24dp"
+    android:background="#F5F5F5">
+    <TextView
+        android:id="@+id/head"
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:textSize="24dp"
+        android:textAlignment="center"
+        android:gravity="center"
+        android:textStyle="bold"
+        android:textColor="@color/primary"
+        android:text="Analysis Software Solutions"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        />
+
+    <EditText
+        android:id="@+id/edtIP"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:hint="Enter IP Address (e.g., 192.168.0.142)"
+        android:background="@drawable/rounded_edittext"
+        android:padding="12dp"
+        android:text="192.168.0.142"
+        android:textColor="#000"
+        android:textColorHint="#888"
+        android:inputType="textUri"
+
+        app:layout_constraintTop_toBottomOf="@id/head"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+     />
+
+    <EditText
+        android:id="@+id/edtPort"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:hint="Enter Port (optional, e.g., Hotel_ServiceApp)"
+        android:background="@drawable/rounded_edittext"
+        android:padding="12dp"
+        android:textColor="#000"
+        android:textColorHint="#888"
+        android:inputType="number"
+        android:text="Hotel_ServiceApp"
+        app:layout_constraintTop_toBottomOf="@id/edtIP"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="12dp"/>
+
+    <EditText
+        android:id="@+id/edtProjectPath"
+        android:layout_width="0dp"
+        android:text="Kanpur_HotelKotApp_Service.svc"
+        android:layout_height="wrap_content"
+        android:hint="Enter Project Path (e.g., Hotel_ServiceApp)"
+        android:background="@drawable/rounded_edittext"
+        android:padding="12dp"
+        android:textColor="#000"
+        android:textColorHint="#888"
+        android:inputType="textUri"
+        app:layout_constraintTop_toBottomOf="@id/edtPort"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="12dp"/>
+
+    <EditText
+        android:id="@+id/edtServicePath"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:hint="Enter Service Path (e.g., Kanpur_HotelKotApp_Service.svc)"
+        android:background="@drawable/rounded_edittext"
+        android:padding="12dp"
+        android:textColor="#000"
+        android:text="Hotel_DeviceReg_Post"
+        android:textColorHint="#888"
+        android:inputType="textUri"
+        app:layout_constraintTop_toBottomOf="@id/edtProjectPath"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="12dp"/>
+
+    <Button
+        android:id="@+id/btnSaveConfig"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Save Configuration"
+        android:backgroundTint="#3F51B5"
+        android:textColor="#FFF"
+        android:paddingLeft="24dp"
+        android:paddingRight="24dp"
+        android:paddingTop="12dp"
+        android:paddingBottom="12dp"
+        android:background="@drawable/rounded_button"
+        app:layout_constraintTop_toBottomOf="@id/edtServicePath"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="20dp"/>
+</androidx.constraintlayout.widget.ConstraintLayout>

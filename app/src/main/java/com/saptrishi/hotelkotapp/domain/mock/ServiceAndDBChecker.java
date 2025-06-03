@@ -1,6 +1,9 @@
 package com.saptrishi.hotelkotapp.domain.mock;
 
+import static android.content.Context.MODE_PRIVATE;
+
 import android.content.Context;
+import android.content.SharedPreferences;
 import android.util.Log;
 import android.widget.Toast;
 
@@ -28,17 +31,23 @@ public class ServiceAndDBChecker {
     public void serviceConnectivityChecker()
     {
         RequestQueue rq = Volley.newRequestQueue(context);
-        //http://192.168.123.2/RAJRASOI/Kanpur_HotelKotApp_Service.svc/checkservice
-        String url = "http://192.168.0.142/Hotel_ServiceApp/Kanpur_HotelKotApp_Service.svc/checkservice";//"http://192.168.9.41/Hotel_ServiceApp/Kanpur_HotelKotApp_Service.svc/checkservice";
-        //String url ="http://192.168.123.2/RAJRASOI/Kanpur_HotelKotApp_Service.svc/checkservice";//"http://192.168.0.117/Hotel_ServiceApp/Kanpur_HotelKotApp_Service.svc/CheckService";
-//http://192.168.0.13/  //http://192.168.123.6//http://192.168.0.171/Nirmal/Kanpur_HotelKotApp_Service.svc/checkservice
-//http://192.168.0.7/Hotel_SeviceApp/Kanpur_HotelKotApp_Service.svc/checkservice
-//http://192.168.1.73/Hotel_ServiceApp/Kanpur_HotelKotApp_Service.svc/checkservice// kanpur(ashish)
-        //http://192.168.0.68/hotel_seviceapp/Kanpur_HotelKotApp_Service.svc/checkservice
-        //http://192.168.29.23/Hotel_SeviceApp/Kanpur_HotelKotApp_Service.svc/Hotel_DeviceReg_Post/HotelName/
-//        http://192.168.9.41/Hotel_ServiceApp/Kanpur_HotelKotApp_Service.svc/checkservice
-   // String url = "http://192.168.30.51/Hotel_ServiceApp/Kanpur_HotelKotApp_Service.svc/checkservice";//"http://192.168.9.41/Hotel_ServiceApp/Kanpur_HotelKotApp_Service.svc/checkservice";
-        JsonArrayRequest jsonArrayRequest = new JsonArrayRequest(url, new Response.Listener<JSONArray>() {
+        SharedPreferences prefs = context.getSharedPreferences("Config", MODE_PRIVATE);
+        String ip = prefs.getString("ip", "");
+        String port = prefs.getString("port", "");
+        String projectPath = prefs.getString("projectPath", "");
+        String servicePath = prefs.getString("servicePath", "");
+        if (ip.isEmpty() || projectPath.isEmpty() || servicePath.isEmpty()) {
+            Toast.makeText(context.getApplicationContext(), "Please configure all settings first", Toast.LENGTH_SHORT).show();
+        }
+        // Construct base URL
+        String DYNAMIC_URL = "http://"+ip+"/"+port+"/"+projectPath + "/checkservice";
+        Log.e( "DYNAMIC_URL : ", ""+ DYNAMIC_URL );
+        String STATIC_URL ="http://192.168.0.142/Hotel_ServiceApp/Kanpur_HotelKotApp_Service.svc/checkservice";
+        Log.e( "STATIC_URL : ", ""+ STATIC_URL );
+
+
+
+        JsonArrayRequest jsonArrayRequest = new JsonArrayRequest(DYNAMIC_URL, new Response.Listener<JSONArray>() {
             @Override
             public void onResponse(JSONArray response) {
                 try {
