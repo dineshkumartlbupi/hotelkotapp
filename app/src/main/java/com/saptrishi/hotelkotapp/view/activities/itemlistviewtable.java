@@ -19,6 +19,7 @@ import com.android.volley.RequestQueue;
 import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.JsonArrayRequest;
+import com.android.volley.toolbox.JsonObjectRequest;
 import com.android.volley.toolbox.Volley;
 import com.saptrishi.hotelkotapp.R;
 import com.saptrishi.hotelkotapp.model.entities.productlistview;
@@ -82,81 +83,66 @@ public class itemlistviewtable  extends AppCompatActivity {
       //  buildRecyclerView();
     }
 
-    private void getData(String DepartCode,String Table) {
-        // creating a new variable for our request queue
+    private void getData(String DepartCode, String Table) {
         RequestQueue queue = Volley.newRequestQueue(itemlistviewtable.this);
-        // in this case the data we are getting is in the form
-        // of array so we are making a json array request.
-        // below is the line where we are making an json array
-        // request and then extracting data from each json object.
 
-       String url = "http://"+IpServiceChecker.getIpaddress()+"/"+IpServiceChecker.getAppName()+"/Kanpur_HotelKotApp_Service.svc/KotitemShow/RestCode/" +DepartCode+"/tblno/"+Table;
-        Log.e( "aaaaaaaaaaaaaa: ",url );
+        String url = "http://" + IpServiceChecker.getIpaddress() + "/" + IpServiceChecker.getAppName()
+                + "/Kanpur_HotelKotApp_Service.svc/ActiveKotList/RoomNo/" + Table + "/restcode/" + DepartCode;
+        Log.e("API_URL", url);
 
-       // String url = "http://192.168.0.123/Hotel_ServiceApp/Kanpur_HotelKotApp_Service.svc/KotitemShow/RestCode/" +DepartCode+"/tblno/"+Table;
-        JsonArrayRequest jsonArrayRequest = new JsonArrayRequest(Request.Method.GET, url, null, new Response.Listener<JSONArray>() {
-            @SuppressLint("SetTextI18n")
-            @Override
-            public void onResponse(JSONArray response) {
-                courseRV.setVisibility(View.VISIBLE);
+        JsonObjectRequest jsonObjectRequest = new JsonObjectRequest(Request.Method.GET, url, null,
+                new Response.Listener<JSONObject>() {
+                    @SuppressLint("SetTextI18n")
+                    @Override
+                    public void onResponse(JSONObject response) {
+                        try {
+                            JSONArray kotList = response.getJSONArray("KotList");
 
-                for (int i = 0; i < response.length(); i++) {
-                    // creating a new json object and
-                    // getting each object from our json array.
-                    try {
-                        // we are getting each json object.
-                        JSONObject responseObj = response.getJSONObject(i);
-                        if( responseObj.getString("Amount")== "null"){
-                            Toast.makeText(itemlistviewtable.this, "No Item On This Table!! ", Toast.LENGTH_SHORT).show();
-                            break;
+                            if (kotList.length() == 0) {
+                                Toast.makeText(itemlistviewtable.this, "No Items On This Table!", Toast.LENGTH_SHORT).show();
+                                return;
+                            }
+
+                            for (int i = 0; i < kotList.length(); i++) {
+                                JSONObject obj = kotList.getJSONObject(i);
+
+                                if (obj.isNull("Amount")) continue;
+
+                                String amountStr = obj.getString("Amount");
+                                String qtyStr = obj.getString("Qty");
+                                String rateStr = obj.getString("Rate");
+                                String itemName = obj.getString("Item");
+                                String itemDesc = obj.optString("Description", "");
+
+                                int qty = Integer.parseInt(qtyStr);
+                                int amount = Integer.parseInt(amountStr);
+
+                                Quantity += qty;
+                                Amount += amount;
+
+                                courseModalArrayList.add(new productlistview(amountStr, itemName, qtyStr, rateStr, itemDesc));
+                            }
+
+                            tv_amount.setText("Total Amount: " + Amount + " Rs");
+                            tv_quantity.setText("Total Quantity: " + Quantity);
+
+                            buildRecyclerView();
+                        } catch (JSONException e) {
+                            e.printStackTrace();
+                            Toast.makeText(itemlistviewtable.this, "Parsing error!", Toast.LENGTH_SHORT).show();
                         }
-                        // now we get our response from API in json object format.
-                        // in below line we are extracting a string with
-                        // its key value from our json object.
-                        // similarly we are extracting all the strings from our json object.
-                        String amount = responseObj.getString("Amount");
-
-                        String  ITEMNAME = responseObj.getString("ITEMNAME");
-                        String qty = responseObj.getString("Qty");
-                        String rate = responseObj.getString("Rate");
-                        String ItemDescription = responseObj.getString( "Description" );
-                        courseModalArrayList.add(new productlistview(amount, ITEMNAME, qty, rate,ItemDescription));
-                        buildRecyclerView();
-
-
-                        String str = qty; // Replace this with your input string
-                        int intqtyy = Integer.parseInt(str);
-
-                        String st = amount;
-                        int intamount = Integer.parseInt( st );
-                      //  double dv = Double.parseDouble(st);
-
-
-
-                        Quantity = Quantity+intqtyy;
-                        Amount = Amount+intamount;
-                       // Amount = Amount+intamount*intqtyy;
-
-                     //   Toast.makeText( itemlistviewtable.this, ""+Quantity, Toast.LENGTH_SHORT ).show();
-
-                        tv_amount.setText("Total Amount: " + Amount +" Rs ");
-                        tv_quantity.setText("Total Quantity: " + Quantity);
-
-                    } catch (JSONException e) {
-                        e.printStackTrace();
                     }
-                }
-            }
-        }, new Response.ErrorListener() {
+                }, new Response.ErrorListener() {
             @Override
             public void onErrorResponse(VolleyError error) {
-                Toast.makeText(itemlistviewtable.this, "No Item On This Table!! ", Toast.LENGTH_SHORT).show();
+                Toast.makeText(itemlistviewtable.this, "API Error!", Toast.LENGTH_SHORT).show();
+                Log.e("VolleyError", error.toString());
             }
         });
-        queue.add(jsonArrayRequest);
-    }
 
-    private void buildRecyclerView() {
+        queue.add(jsonObjectRequest);
+    }
+ private void buildRecyclerView() {
 
         // initializing our adapter class.
         adapter = new Itemlistviewtable_Adapter(itemlistviewtable.this, courseModalArrayList);

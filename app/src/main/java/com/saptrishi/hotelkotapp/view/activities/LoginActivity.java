@@ -81,7 +81,7 @@ public class LoginActivity extends AppCompatActivity {
 
     }
     public void submitit(View view) throws ParseException {
-        Toast.makeText( this, "abced", Toast.LENGTH_SHORT ).show();
+//        Toast.makeText( this, "abced", Toast.LENGTH_SHORT ).show();
         SharedPreferences sharedPreferences=getSharedPreferences("Restaurant",Context.MODE_PRIVATE);
         String expiryDate=sharedPreferences.getString("ExpiryDate","");
 
@@ -198,7 +198,7 @@ public class LoginActivity extends AppCompatActivity {
         RequestQueue requestQueue = Volley.newRequestQueue(this);
         url="http://"+AppIp+"/"+Appname+"/Kanpur_HotelKotApp_Service.svc/LoginApp_Post/logid/"+loginId+"/passid/"+loginPass+"";
         Log.e("loginurl11",url);
-        Toast.makeText( this, "abcdef", Toast.LENGTH_SHORT ).show();
+//        Toast.makeText( this, "abcdef", Toast.LENGTH_SHORT ).show();
         JsonArrayRequest jsonArrayRequest = new JsonArrayRequest(url, new Response.Listener<JSONArray>() {
             @Override
             public void onResponse(JSONArray response) {

@@ -6,7 +6,7 @@ android:layout_width="match_parent"
 android:layout_height="wrap_content"
     android:layout_gravity="center"
 
-android:background="#82ff6e"
+android:background="@drawable/bg_gradient_orange_blue"
 
 
 >
@@ -30,7 +30,6 @@ android:background="#82ff6e"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/waiterllayout"
-        android:background="#82ff6e"
         android:gravity="center"
         android:orientation="vertical"
         app:layout_constraintTop_toTopOf="parent"

@@ -11,7 +11,7 @@
     android:id="@+id/root"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#82ff6E"
+    android:background="#2F5FF0"
     android:gravity="center">
 <LinearLayout
     android:layout_width="match_parent"

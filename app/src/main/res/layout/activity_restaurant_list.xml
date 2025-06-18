@@ -1,89 +1,85 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
+    android:paddingTop="48dp"
     android:layout_height="match_parent"
-    android:background="#82ff5e">
 
+    android:background="@drawable/bg_gradient_orange_blue">
 
-
-
+    <!-- Title Bar -->
     <TextView
         android:id="@+id/login_title"
-        android:layout_width="fill_parent"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:background="#82ff6e"
         android:gravity="center"
         android:text="@string/header"
         android:textColor="#00645a"
         android:textSize="25sp"
         android:textStyle="bold"
-        android:layout_margin="10dp"
-        app:layout_constraintEnd_toEndOf="parent"
+        android:padding="12dp"
+        app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintEnd_toEndOf="parent" />
 
+    <!-- Main Content Area -->
     <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:id="@+id/contentLayout"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
         android:orientation="vertical"
-        android:layout_marginTop="60dp"
-        android:layout_marginBottom="30dp"
-        android:background="#82ff5e"
-        xmlns:android="http://schemas.android.com/apk/res/android">
+        android:padding="16dp"
+        app:layout_constraintTop_toBottomOf="@id/login_title"
+        app:layout_constraintBottom_toTopOf="@+id/textView"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
 
-
+        <!-- Restaurant Name -->
         <TextView
+            android:padding="8dp"
             android:id="@+id/res_name1"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:ellipsize="marquee"
-            android:focusable="false"
-            android:freezesText="true"
+            android:text="Restaurant Name"
             android:textAlignment="center"
+            android:textColor="#00645A"
+            android:textSize="24sp"
             android:textStyle="bold"
-            android:layout_gravity="center"
-            android:gravity="center"
+            android:singleLine="true"
+            android:ellipsize="marquee"
             android:marqueeRepeatLimit="marquee_forever"
             android:scrollHorizontally="true"
-            android:singleLine="true"
-            android:text="Resturant Name"
-            android:textColor="#00645A"
-            android:background="#82ff6e"
-            android:textSize="25sp" />
+            android:focusableInTouchMode="true"
+            android:focusable="true"
+            android:background="@color/blue" />
 
-        <HorizontalScrollView
+        <!-- List of Items -->
+        <ListView
+            android:layout_marginTop="16dp"
+            android:id="@+id/lv"
             android:layout_width="match_parent"
-            android:layout_marginTop="20dp"
-            android:layout_height="match_parent">
-
-            <ListView
-                android:layout_width="match_parent"
-                android:layout_height="200dp"
-                android:id="@+id/lv"
-                android:backgroundTint="#f2f5df"
-                android:layout_marginLeft="140dp"
-                android:background="@drawable/user_background">
-
-            </ListView>
-        </HorizontalScrollView>
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:background="@drawable/user_background"
+            android:dividerHeight="1dp"
+            android:padding="8dp" />
     </LinearLayout>
+
+    <!-- Footer -->
     <TextView
         android:id="@+id/textView"
-        android:layout_width="match_parent"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:layout_centerHorizontal="true"
         android:background="#000000"
         android:gravity="center"
-        android:layout_marginBottom="0dp"
         android:text="@string/footer"
-        android:textColor="#fff"
-        android:textSize="16sp"
-
+        android:textColor="#ffffff"
+        android:textSize="14sp"
+        android:textStyle="bold"
+        android:padding="10dp"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"/>
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
