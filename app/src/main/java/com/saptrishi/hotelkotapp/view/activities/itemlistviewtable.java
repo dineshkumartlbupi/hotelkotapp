@@ -97,7 +97,7 @@ public class itemlistviewtable  extends AppCompatActivity {
                     public void onResponse(JSONObject response) {
                         try {
                             JSONArray kotList = response.getJSONArray("KotList");
-
+                            System.out.println("kotList : "+kotList);
                             if (kotList.length() == 0) {
                                 Toast.makeText(itemlistviewtable.this, "No Items On This Table!", Toast.LENGTH_SHORT).show();
                                 return;
@@ -107,12 +107,13 @@ public class itemlistviewtable  extends AppCompatActivity {
                                 JSONObject obj = kotList.getJSONObject(i);
 
                                 if (obj.isNull("Amount")) continue;
-
                                 String amountStr = obj.getString("Amount");
                                 String qtyStr = obj.getString("Qty");
                                 String rateStr = obj.getString("Rate");
-                                String itemName = obj.getString("Item");
-                                String itemDesc = obj.optString("Description", "");
+                                String itemName = obj.getString("ItemName");
+                                String itemDesc = !obj.getString("Description").isEmpty() &&obj.getString("Description") !=""
+                                        ? obj.getString("Description")
+                                        : "Description Not found";
 
                                 int qty = Integer.parseInt(qtyStr);
                                 int amount = Integer.parseInt(amountStr);

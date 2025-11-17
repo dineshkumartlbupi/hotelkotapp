@@ -8,6 +8,7 @@
 
 package com.saptrishi.hotelkotapp.view.adapter;
 
+import android.annotation.SuppressLint;
 import android.content.Context;
 import android.database.Cursor;
 import android.graphics.Color;
@@ -53,13 +54,6 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
-/**
- * Simple RecyclerView.Adapter that implements {@link ItemTouchHelperAdapter} to
- * respond to move and dismiss events from a
- * {@link android.support.v7.widget.helper.ItemTouchHelper}.
- *
- * @author Hitesh Sahu (hiteshsahu.com)
- */
 public class ShoppingListAdapter extends
         RecyclerView.Adapter<ShoppingListAdapter.ItemViewHolder> implements
         ItemTouchHelperAdapter {
@@ -94,12 +88,12 @@ public class ShoppingListAdapter extends
 
     //EditText et;
     @Override
-    public void onBindViewHolder(final ItemViewHolder holder, final int position) {
+    public void onBindViewHolder(final ItemViewHolder holder, @SuppressLint("RecyclerView") final int position) {
         holder1 = holder;
 
         holder.itemName.setText(productList.get(position).getItemName());
 
-//        holder.itemDesc.setText(productList.get(position).getItemShortDesc());
+        holder.itemDesc.setText(productList.get(position).getItemShortDesc());
 
         String sellCostString = Money.rupees(
                 BigDecimal.valueOf(Double.parseDouble(productList.get(position)
@@ -118,7 +112,7 @@ public class ShoppingListAdapter extends
         Log.e("sellCostString1",sellCostString);
         Log.e("sellCostString2",buyMRP);
 
-//        CenterRepository.getCenterRepository().getListOfProductsInShoppingList().get(position).getItemShortDesc();
+        CenterRepository.getCenterRepository().getListOfProductsInShoppingList().get(position).getItemShortDesc();
 
         holder.edit_itemremark.setText( productList.get(position).getItemShortDesc());
 
@@ -141,7 +135,7 @@ public class ShoppingListAdapter extends
                 .get(position).getItemName().charAt(0)), mColorGenerator
                 .getColor(productList.get(position).getItemName()));
 
-        //ImageUrl = productList.get(position).getImageURL();
+        ImageUrl = productList.get(position).getImageURL();
 
 
 
@@ -213,13 +207,13 @@ public class ShoppingListAdapter extends
         holder.edit_itemremark.setOnFocusChangeListener(new View.OnFocusChangeListener() {
             @Override
             public void onFocusChange(View view, boolean b) {
-//                 holder.edit_itemremark.setText(CenterRepository.getCenterRepository()
-//                         .getListOfProductsInShoppingList().get(position).getItemShortDesc());
+                 holder.edit_itemremark.setText(CenterRepository.getCenterRepository()
+                         .getListOfProductsInShoppingList().get(position).getItemShortDesc());
 
                 Log.e("itemDesc", holder.edit_itemremark.getText().toString().trim());
                 try {
-                    //CenterRepository.getCenterRepository().getListOfProductsInShoppingList().get(position).setItemShortDesc(holder.edit_itemremark.getText().toString().trim());
-                    //holder.itemDesc.setText(holder.edit_itemremark.getText().toString().trim());
+                    CenterRepository.getCenterRepository().getListOfProductsInShoppingList().get(position).setItemShortDesc(holder.edit_itemremark.getText().toString().trim());
+                    holder.itemDesc.setText(holder.edit_itemremark.getText().toString().trim());
                     MySqliteDatabase db = new MySqliteDatabase(context);
                     db.updateRestaurantTable(CenterRepository
                             .getCenterRepository().getListOfProductsInShoppingList()
@@ -580,8 +574,6 @@ public class ShoppingListAdapter extends
 //
 //            clickListener.onItemClick(v, getPosition());
 //        }
-
-
     }
 //    private void datasendtodb(String name) {
 //

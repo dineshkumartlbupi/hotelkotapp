@@ -134,8 +134,8 @@ public class ProductListAdapter extends
         holder.itemName.setText( productList.get( position )
                 .getItemName() );
 
-        holder.itemcode.setText( productList.get( position )
-                .getProductId() );
+//        holder.itemcode.setText( productList.get( position )
+//                .getProductId() );
 
         holder.quanitity.setText( productList.get( position )
                 .getQuantity() );
@@ -525,7 +525,8 @@ public class ProductListAdapter extends
     }
 
     class VersionViewHolder extends RecyclerView.ViewHolder {
-        TextView itemnumber, itemName, itemDesc, itemCost, availability, quanitity, itemcode,
+        TextView itemnumber, itemName, itemDesc, itemCost, availability, quanitity,
+                itemcode,
                 addItem, removeItem;
         ImageView imagView;
 

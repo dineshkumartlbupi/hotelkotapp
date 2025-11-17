@@ -1,12 +1,10 @@
 package com.saptrishi.hotelkotapp.view.adapter;
 
-import android.app.ProgressDialog;
 import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
@@ -15,21 +13,16 @@ import com.saptrishi.hotelkotapp.R;
 import com.saptrishi.hotelkotapp.model.entities.productlistview;
 
 import java.util.ArrayList;
-import java.util.List;
 
 public class Itemlistviewtable_Adapter extends RecyclerView.Adapter<Itemlistviewtable_Adapter.ViewHolder> {
-//    int Quantity = 0;
-//    int Amount = 0;
+
     Context context;
     private ArrayList<productlistview> courseModalArrayList;
-    ProgressDialog progressDialog;
 
-    public Itemlistviewtable_Adapter(Context context,ArrayList<productlistview>courseModalArrayList ) {
+    public Itemlistviewtable_Adapter(Context context, ArrayList<productlistview> courseModalArrayList) {
         this.courseModalArrayList = courseModalArrayList;
         this.context = context;
-}
-
-
+    }
 
     @NonNull
     @Override
@@ -37,36 +30,27 @@ public class Itemlistviewtable_Adapter extends RecyclerView.Adapter<Itemlistview
         View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.itemproduct_view, parent, false);
         return new ViewHolder(view);
     }
+
     @Override
-    public void onBindViewHolder(@NonNull Itemlistviewtable_Adapter.ViewHolder holder,  int position) {
+    public void onBindViewHolder(@NonNull Itemlistviewtable_Adapter.ViewHolder holder, int position) {
         try {
             productlistview modal = courseModalArrayList.get(position);
-            holder.Amountname.setText("Rs " +modal.getAmount());
+
             holder.Itemnames.setText(modal.getITEMNAME());
-            holder.Qty.setText(""+modal.getQty());
-            holder.ItemDescription.setText( modal.getItemDescription() );
-//            holder.Rates.setText(courseModalArrayList.get(position).getRate());
-            // Toast.makeText( context, ""+sdf, Toast.LENGTH_SHORT).show();
-            // Toast.makeText( context, "sdf",sdf, Toast.LENGTH_SHORT ).show();
-//            String a += modal.getQty();
+            String desc = modal.getItemDescription();
+            holder.ItemDescription.setText(
+                    desc != null && !desc.isEmpty()
+                            ? "Description: " + desc
+                            : "Description not found"
+            );
 
-//            String str = modal.getQty(); // Replace this with your input string
-//            int intqtyy = Integer.parseInt(str);
-//
-//            String st = modal.getAmount();
-//            int intamount = Integer.parseInt( st );
-//
-//            Quantity = Quantity+intqtyy;
-//            Amount = Amount+intamount;
-
-
-
-
+            holder.Qty.setText("Qty: " + modal.getQty());
+            holder.Rate.setText("Rate: Rs " + modal.getRate());
+            holder.Amountname.setText("Amount: Rs " + modal.getAmount());
 
         } catch (Exception e) {
             e.printStackTrace();
         }
-
     }
 
     @Override
@@ -76,27 +60,16 @@ public class Itemlistviewtable_Adapter extends RecyclerView.Adapter<Itemlistview
 
     public class ViewHolder extends RecyclerView.ViewHolder {
 
-        TextView Amountname,Itemnames,Qty,Rates;
-        TextView ItemDescription;
-        TextView total_amount,total_qty;
+        TextView Amountname, Itemnames, Qty, Rate, ItemDescription;
 
-        public ViewHolder(@NonNull View itemView)
-        {
+        public ViewHolder(@NonNull View itemView) {
             super(itemView);
-            Amountname = (TextView) itemView.findViewById(R.id.item_prices);
-            Itemnames = (TextView) itemView.findViewById(R.id.item_names);
-            Qty =  (TextView) itemView.findViewById(R.id.iteam_amounts);
-            ItemDescription =  (TextView) itemView.findViewById(R.id.item_short_desc1);
-            total_amount = (TextView)itemView.findViewById( R.id.total_amount );
-            total_qty = (TextView)itemView.findViewById( R.id.total_qty );
 
-
+            Itemnames = itemView.findViewById(R.id.item_names);
+            ItemDescription = itemView.findViewById(R.id.item_short_desc1);
+            Qty = itemView.findViewById(R.id.iteam_amounts);
+            Rate = itemView.findViewById(R.id.item_rate);
+            Amountname = itemView.findViewById(R.id.item_prices);
         }
     }
-
-
 }
-
-//}
-
-
